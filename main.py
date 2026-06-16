@@ -1,12 +1,28 @@
-from flask import Flask, render_template
+from fastapi import FastAPI, Header, HTTPException
+from pydantic import BaseModel
 
-app = Flask(__name__)
+app = FastAPI()
 
+API_KEY = "sandeep123"
 
-@app.route("/")
-def index():
-    return render_template("index.html")
+class Employee(BaseModel):
+    id: int
+    name: str
+    salary: int
+    age: int
 
+@app.post("/employee")
+def create_employee(
+    employee: Employee,
+    x_api_key: str = Header()
+):
 
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    if x_api_key != API_KEY:
+        raise HTTPException(
+            status_code=401,
+            detail="Unauthorized"
+        )
+
+    return {
+        "message": employee.name + " has been created."
+    }
