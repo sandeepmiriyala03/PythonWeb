@@ -33,3 +33,5 @@ class DepartmentRepository:
             conn.commit()
 
         return True
+    
+    
