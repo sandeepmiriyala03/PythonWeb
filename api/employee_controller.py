@@ -8,11 +8,15 @@ router = APIRouter(
     tags=["Employee"]
 )
 
+@router.get("/employees")
+def get_employees():
+    return EmployeeService.get_employees()
+
+
 @router.post("")
 def create_employee(
     employee: Employee
 ):
-
     return EmployeeService.create_employee(
         employee
     )

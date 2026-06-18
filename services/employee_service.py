@@ -13,3 +13,7 @@ class EmployeeService:
             "message":
                 employee.name + " Created"
         }
+    @staticmethod
+    def get_employees():
+
+        return EmployeeRepository.get_employees()

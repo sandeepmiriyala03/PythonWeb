@@ -1,6 +1,7 @@
 from sqlalchemy import text
 from database.db import engine
 
+
 class EmployeeRepository:
 
     @staticmethod
@@ -29,11 +30,44 @@ class EmployeeRepository:
                     "name": employee.name,
                     "salary": employee.salary,
                     "age": employee.age,
-                    "departmentId":
-                        employee.departmentId
+                    "departmentId": employee.departmentId
                 }
             )
 
             conn.commit()
 
         return True
+
+    @staticmethod
+    def get_employees():
+
+        with engine.connect() as conn:
+
+            result = conn.execute(
+                text("""
+                    SELECT
+                        Id,
+                        Name,
+                        Salary,
+                        Age,
+                        DepartmentId
+                    FROM Employees
+                """)
+            )
+
+            employees = []
+
+            for row in result:
+
+                employees.append(
+                    {
+                        "id": row.Id,
+                        "name": row.Name,
+                        "salary": row.Salary,
+                        "age": row.Age,
+                        "departmentId": row.DepartmentId
+                    }
+                )
+
+            return employees
+        
