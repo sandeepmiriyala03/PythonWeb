@@ -1,10 +1,11 @@
 from sqlalchemy import create_engine
 
 connection_string = (
-    "mssql+pyodbc://@localhost/YuktishaalaaAI?"
-    "driver=ODBC+Driver+17+for+SQL+Server"
-    "&trusted_connection=yes"
-    "&TrustServerCertificate=yes"
+    "postgresql+psycopg2://"
+    "neondb_owner:npg_5J0HaXlALTBE"
+    "@ep-orange-hill-atrmkf0s-pooler.c-9.us-east-1.aws.neon.tech"
+    "/neondb"
+    "?sslmode=require&channel_binding=require"
 )
 
 engine = create_engine(

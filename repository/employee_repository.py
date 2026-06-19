@@ -46,7 +46,7 @@ class EmployeeRepository:
             result = conn.execute(
                 text("""
                     SELECT
-                        Id,
+                        id,
                         Name,
                         Salary,
                         Age,
@@ -61,11 +61,11 @@ class EmployeeRepository:
 
                 employees.append(
                     {
-                        "id": row.Id,
-                        "name": row.Name,
-                        "salary": row.Salary,
-                        "age": row.Age,
-                        "departmentId": row.DepartmentId
+                        "id": row.id,
+                        "name": row.name,
+                        "salary": row.salary,
+                        "age": row.age,
+                        "departmentid": row.departmentid
                     }
                 )
 
