@@ -8,7 +8,7 @@ app = FastAPI(
     title="YuktishaalaaAI API"
 )
 
-# Add your custom production domain right here
+# Allowed production domains
 origins = [
     "http://localhost:3000",
     "https://yuktishaalaa-ai.vercel.app",
@@ -18,10 +18,9 @@ origins = [
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
-    allow_credentials=True,     
+    allow_credentials=True,  # Kept exactly ONE entry set to True
     allow_methods=["*"],
     allow_headers=["*"],
-    allow_credentials=False,   
 )
 
 app.include_router(employee_router)
