@@ -27,7 +27,7 @@ The intelligent digital charioteer for enterprise graph topologies. Orchestratin
 """
 
 app = FastAPI(
-    title="🔱 Yuktisárathi Engine Portal | YuktishaalaaAI",
+    title=" Yuktisárathi Engine Portal | YuktishaalaaAI",
     description=description,
     version="0.1.0-Alpha",
     contact={
