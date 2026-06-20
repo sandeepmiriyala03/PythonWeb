@@ -12,7 +12,7 @@ The intelligent digital charioteer for enterprise graph topologies. Orchestratin
 
 ---
 
-### 🏛️ The Vision
+###  The Vision
 > **"Not a tool, but a torch for your inner Mahabharata."**  
 > — *Sandeep Miriyala*
 
@@ -23,7 +23,7 @@ The intelligent digital charioteer for enterprise graph topologies. Orchestratin
 * **🔒 Gateway Protocols:** Strict Cross-Origin Resource Sharing (CORS) rules applied. System endpoints interface exclusively with mapped white-listed development domains.
 
 ---
-`Engine Status: Active 🚀 | Version: 0.1.0-Alpha | Database: Neo4j Connected 🟢`
+`Engine Status: Active  Database: Neo4j Connected 🟢`
 """
 
 app = FastAPI(
@@ -31,7 +31,7 @@ app = FastAPI(
     description=description,
     version="0.1.0-Alpha",
     contact={
-        "name": "Sandeep Miriyala (Yuktishaalaa Engineering)",
+        "name": "Sandeep Miriyala",
         "url": "https://aksharatantra.miriyala.in",
     },
     docs_url=None,
