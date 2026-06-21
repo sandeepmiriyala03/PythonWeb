@@ -6,6 +6,7 @@ from fastapi.openapi.docs import get_swagger_ui_html
 
 from api.employee_controller import router as employee_router
 from api.department_controller import router as department_router
+from api.user_controller import router as user_router
 
 description = """
 The intelligent digital charioteer for enterprise graph topologies. Orchestrating live corporate data structures with high-fidelity telemetry.
@@ -33,12 +34,6 @@ app = FastAPI(
     contact={
         "name": "Sandeep Miriyala",
         "url": "https://aksharatantra.miriyala.in",
-    },
-    docs_url=None,
-    swagger_ui_parameters={
-        "syntaxHighlight.theme": "obsidian",
-        "defaultModelsExpandDepth": -1,
-        "docExpansion": "list"
     }
 )
 
@@ -554,3 +549,4 @@ async def redirect_to_docs():
 
 app.include_router(employee_router)
 app.include_router(department_router)
+app.include_router(user_router)
